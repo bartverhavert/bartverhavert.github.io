@@ -19,6 +19,9 @@ end
 compile '/images/*/' do
 end
 
+compile 'CNAME' do
+end
+
 compile '*' do
   if item[:extension] == 'css'
     # don’t filter stylesheets
@@ -38,6 +41,10 @@ route '/images/*/' do
     item.identifier.chop
 end
 
+route 'CNAME' do
+    item.identifier.chop
+end
+
 route '*' do
   if item[:extension] == 'css'
     # Write item with identifier /foo/ to /foo.css
@@ -45,8 +52,6 @@ route '*' do
   elsif item.binary?
     # Write item with identifier /foo/ to /foo.ext
     item.identifier.chop + (item[:extension] ? '.' + item[:extension] : '')
-  elsif item[:content_filename] == 'CNAME'
-    "CNAME"
   else
     # Write item with identifier /foo/ to /foo/index.html
     item.identifier + 'index.html'
