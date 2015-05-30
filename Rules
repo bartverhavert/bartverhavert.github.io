@@ -24,7 +24,7 @@ end
 
 compile '/blog/*' do
     filter :kramdown
-    layout 'blog'
+    layout 'blog_post'
 end
 
 compile '*' do
