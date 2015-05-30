@@ -22,14 +22,16 @@ end
 compile 'CNAME' do
 end
 
+compile '/blog/*' do
+    filter :kramdown
+    layout 'blog'
+end
+
 compile '*' do
     if item[:extension] == 'css'
         # don’t filter stylesheets
     elsif item.binary?
         # don’t filter binary items
-    elsif item[:extension] == 'md'
-        filter :kramdown
-        layout 'default'
     else
         filter :erb
         layout 'default'
