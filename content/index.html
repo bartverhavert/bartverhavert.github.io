@@ -6,6 +6,9 @@ title: Home
         <div class='post'>
             <h1><%= link_to post[:title], post.path %></h1>
             <aside>Posted at <%= get_pretty_date(post) %></aside>
+            <div>
+                <%= get_begin_of_post(post) %>
+            </div>
             <a href="<%= post.path %>" class="button">Read more</a>
         </div>
     <% end %>
