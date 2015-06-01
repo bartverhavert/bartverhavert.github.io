@@ -3,9 +3,11 @@ title: Home
 ---
 <section>
     <% sorted_articles.each do |post| %>
-        <div class='post'>
-            <h1><%= link_to post[:title], post.path %></h1>
-            <aside>Posted at <%= get_pretty_date(post) %></aside>
+        <div class='blog_post'>
+            <header>
+                <h1><%= link_to post[:title], post.path %></h1>
+                <aside>Posted at <%= get_pretty_date(post) %></aside>
+            </header>
             <div>
                 <%= get_begin_of_post(post) %>
             </div>

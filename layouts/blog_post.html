@@ -1,7 +1,13 @@
 <% render 'default' do %>
-    <h1><%= item[:title] %></h1>
-    <aside>Posted at <%= get_pretty_date(item) %></aside>
-    <article>
-        <%= yield %>
-    </article>
+    <section>
+        <div class='blog_post'>
+            <header>
+                <h1><%= item[:title] %></h1>
+                <aside>Posted at <%= get_pretty_date(item) %></aside>
+            </header>
+            <article>
+                <%= yield %>
+            </article>
+        </div>
+    </section>
 <% end %>
