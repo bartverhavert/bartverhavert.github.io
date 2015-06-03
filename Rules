@@ -32,25 +32,14 @@ end
 
 # OTHER
 
-compile '/assets/*/' do
-end
-
-compile '/images/*/' do
-end
-
-compile 'CNAME' do
-end
-
 compile '*' do
-    if item[:extension] == 'css'
-        # don’t filter stylesheets
-    elsif item[:extension] == 'scss'
-        filter :sass, syntax: :scss
-    elsif item.binary?
-        # don’t filter binary items
-    else
-        filter :erb
-        layout 'default'
+    if !/^\/(CNAME|assets|images)/.match(item.identifier)
+        if item[:extension] == 'scss'
+            filter :sass, syntax: :scss
+        else
+            filter :erb
+            layout 'default'
+        end
     end
 end
 
