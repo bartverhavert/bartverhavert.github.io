@@ -2,3 +2,4 @@
 output
 tmp
 Gemfile.lock
+.sass-cache
