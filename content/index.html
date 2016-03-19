@@ -8,7 +8,7 @@ title: Home
                 <% chekky_app = get_app_with_identifier("be.bartverhavert.chekky") %>
                 <hr class="section-heading-spacer">
                 <div class="clearfix"></div>
-                <h2 class="section-heading">Chekky</h2>
+                <h2 class="section-heading"><%= link_to chekky_app[:title], chekky_app.path %></h2>
                 <p class="lead"><%= get_app_description(chekky_app) %></p>
                 <div>
                     <a href="<%= chekky_app[:app_store_url] %>">
