@@ -30,6 +30,16 @@ h6 {
     font-weight: 400;
 }
 
+h2.section-heading.blog-post {
+    margin-bottom: 5px;
+}
+
+aside.blog-post-date {
+    font-weight: 300;
+    font-size: 90%;
+    margin-bottom: 30px;
+}
+
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
