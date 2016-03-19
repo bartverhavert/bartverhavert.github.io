@@ -26,15 +26,12 @@ title: Home
     <% sorted_articles.each do |post| %>
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                <div class="col-lg-12">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading"><%= link_to post[:title], post.path %></h2>
                     <aside>Posted at <%= get_pretty_date(post) %></aside>
                     <p class="lead"><%= get_begin_of_post(post) %></p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <!-- <img class="img-responsive" src="/images/chekky-iphone6-manage-venues.png" alt=""> -->
                 </div>
             </div>
         </div>
