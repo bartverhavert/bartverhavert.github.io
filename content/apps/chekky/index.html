@@ -3,11 +3,14 @@ title: Chekky
 kind: app
 app_identifier: be.bartverhavert.chekky
 app_store_url: https://itunes.apple.com/app/chekky-automate-your-check/id1045769116?mt=8
+screenshot_source: /images/chekky-iphone6-manage-venues.png
 ---
 <div class="content-section-a">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-7 col-sm-6">
+                <hr class="section-heading-spacer">
+                <div class="clearfix"></div>
                 <h2 class="section-heading">Chekky</h2>
                 <p>
                     <!-- description_start -->
@@ -16,15 +19,27 @@ app_store_url: https://itunes.apple.com/app/chekky-automate-your-check/id1045769
                     for you! By the way, Chekky is very battery friendly!
                     <!-- description_end -->
                 </p>
-                With Chekky, you can:
-                <ul>
-                    <li>define how close you have to be to the place you want to be checked in</li>
-                    <li>choose whether you want to be checked in when visiting the place or just passing through</li>
-                    <li>temporarily enable/disable checking in</li>
-                    <li>enable/disable getting notifications of your check-ins</li>
-                    <li>enable/disable being reminded to check in, instead of automatically checking in</li>
-                </ul>
-                Your Foursquare data is encrypted when stored on device and is not being shared with any other services than Foursquare.
+                <p>
+                    With Chekky, you can:
+
+                    <ul>
+                        <li>define how close you have to be to the place you want to be checked in</li>
+                        <li>choose whether you want to be checked in when visiting the place or just passing through</li>
+                        <li>temporarily enable/disable checking in</li>
+                        <li>enable/disable getting notifications of your check-ins</li>
+                        <li>enable/disable being reminded to check in, instead of automatically checking in</li>
+                    </ul>
+
+                    Your Foursquare data is encrypted when stored on device and is not being shared with any other services than Foursquare.
+                </p>
+                <div>
+                    <a href="<%= item[:app_store_url] %>">
+                        <img height="40" src="/images/app_store_download_button.svg" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-6">
+                <img class="img-responsive" src="<%= item[:screenshot_source] %>" alt="">
             </div>
         </div>
     </div>
@@ -32,7 +47,7 @@ app_store_url: https://itunes.apple.com/app/chekky-automate-your-check/id1045769
 <div class="content-section-b">
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 col-lg-offset-1 col-sm-push-6 col-sm-6">
+            <div class="col-lg-5 col-sm-6">
                 <h2 class="section-heading">Privacy policy</h2>
                 <p>
                     Your data is encrypted when stored on device and will not be sent to services
@@ -42,7 +57,7 @@ app_store_url: https://itunes.apple.com/app/chekky-automate-your-check/id1045769
                     are anonymously sent to Crashlytics and Answers.
                 </p>
             </div>
-            <div class="col-lg-5 col-sm-pull-6 col-sm-6">
+            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                 <h2 class="section-heading">Open source</h2>
                 <p>
                     <ul>
