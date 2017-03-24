@@ -33,7 +33,7 @@ end
 # OTHER
 
 compile '/**/*' do
-    if !/^\/(CNAME|assets|images)\//.match(item.identifier)
+    if !/^\/(CNAME|assets|images)\/?/.match(item.identifier)
         if item[:extension] == 'scss'
             filter :sass, syntax: :scss
         else
@@ -44,14 +44,14 @@ compile '/**/*' do
 end
 
 route '/**/*' do
-    if /^\/(CNAME|assets|images)\//.match(item.identifier)
-        item.identifier.chop
+    if /^\/(CNAME|assets|images)\/?/.match(item.identifier)
+        item.identifier.to_s
     elsif item[:extension] == 'scss'
         '/test' + item.identifier.chop + '.css'
     elsif item.identifier == "/404/"
         item.identifier.chop + '.html'
     else
-        item.identifier.to_s.downcase + 'index.html'
+        item.identifier.to_s.downcase
     end
 end
 
