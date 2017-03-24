@@ -51,7 +51,7 @@ route '*' do
     elsif item.identifier == "/404/"
         item.identifier.chop + '.html'
     else
-        item.identifier.downcase + 'index.html'
+        item.identifier.to_s.downcase + 'index.html'
     end
 end
 
