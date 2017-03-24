@@ -32,18 +32,18 @@ end
 
 # OTHER
 
-compile '*' do
+compile '/**/*' do
     if !/^\/(CNAME|assets|images)\//.match(item.identifier)
         if item[:extension] == 'scss'
             filter :sass, syntax: :scss
         else
             filter :erb
-            layout 'default'
+            layout '/default.*'
         end
     end
 end
 
-route '*' do
+route '/**/*' do
     if /^\/(CNAME|assets|images)\//.match(item.identifier)
         item.identifier.chop
     elsif item[:extension] == 'scss'
@@ -55,4 +55,4 @@ route '*' do
     end
 end
 
-layout '*', :erb
+layout '/**/*', :erb
