@@ -44,14 +44,12 @@ compile '/**/*' do
 end
 
 route '/**/*' do
-    if /^\/(CNAME|assets|images)\/?/.match(item.identifier)
+    if /^\/(CNAME|assets|images)\/?/.match(item.identifier) || /(404|index).html/.match(item.identifier)
         item.identifier.to_s
     elsif item[:extension] == 'scss'
         '/test' + item.identifier.chop + '.css'
-    elsif item.identifier == "/404/"
-        item.identifier.chop + '.html'
     else
-        item.identifier.to_s.downcase
+        item.identifier.without_ext + '/index.html'
     end
 end
 
