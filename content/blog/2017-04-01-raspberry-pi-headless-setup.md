@@ -17,46 +17,61 @@ cable, but it should work for the other ones as well.
 
 ### Install Raspbian
 
-1. Download the latest version of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/ "Raspbian")
+* Download the latest version of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/ "Raspbian")
 
-2. Format the SD card to FAT32
+* Format the SD card to FAT32
 
-3. Find the SD card
+* Find the SD card
 
 ~~~
 diskutil list
 ~~~
 
-4. Unmount the SD card
+* Unmount the SD card
 
 ~~~
 diskutil unmountDisk /dev/disk<#DISK_NUMBER#>
 ~~~
 
-5. Write the image to the disk
+* Write the image to the SD card
 
 ~~~
 sudo dd bs=1m if=~/Downloads/<#image_name#>.img of=/dev/rdisk<#DISK_NUMBER#>
 ~~~
 
+
 ### Enable SSH
-Enable SSH by default which has been disabled in the latest versions of Raspbian
+
+In order to be able to perform tasks on your Raspberry Pi, you need SSH. However, since
+Raspbian Jessie, this is disabled by default. To enable it at first boot, perform the following
+command. Side note, 'boot' is a folder created when writing the image to the SD card, it's also
+the only folder you can read and write to from your Mac without doing any other
+tricky things.
 
 ~~~
 touch /Volumes/boot/ssh
 ~~~
 
+
 ### WiFi
-Setup WiFi on RPIs that don't have an Ethernet port but a WiFi chip instead. (source: https://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/)
-1. Insert SD card in Windows
-2. Use an application like 'Paragon ExtFS', something that can write to Ext4 Linux partitions
-3. Edit the file at `etc/network/interfaces` on the mounted disk.
+
+For my Raspberry Pi Zero W, I had to find a way to set up the WiFi without using
+a connected keyboard, mouse and monitor. After some searching, I found
+[a blog post](https://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/)
+which I used to get the job done. For me, the following steps were sufficient.
+
+* Insert SD card in Windows
+* Use an application like 'Paragon ExtFS', something that can write to Ext4 Linux partitions
+* Edit the file at `etc/network/interfaces` on the mounted disk.
+    Find the following lines of code
 
 ~~~
 allow-hotplug wlan0
 iface wlan0 inet manual
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ~~~
+
+and replace them by
 
 ~~~
 auto wlan0
@@ -65,7 +80,7 @@ iface wlan0 inet dhcp
     wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 ~~~
 
-4. Next, edit the file at `etc/wpa_supplicant/wpa_supplicant.conf` and add the following block of code
+* Next, edit the file at `etc/wpa_supplicant/wpa_supplicant.conf` and add the following block of code
 
 ~~~
 network={
