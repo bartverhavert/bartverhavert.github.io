@@ -62,8 +62,7 @@ which I used to get the job done. For me, the following steps were sufficient.
 
 * Insert SD card in Windows
 * Use an application like 'Paragon ExtFS', something that can write to Ext4 Linux partitions
-* Edit the file at `etc/network/interfaces` on the mounted disk.
-    Find the following lines of code
+* Edit the file at `etc/network/interfaces` on the mounted disk. Find the following lines of code
 
 ~~~
 allow-hotplug wlan0
@@ -94,26 +93,31 @@ network={
 ~~~
 
 ### Security
-Boot up your Raspberry Pi and connect to it through ssh.
+
+Next up, security. All Raspbian installations come, by default, with the following
+user and password combination. Username: `pi`, password: `raspberry`.\\
+In order to change the password, first connect to your Raspberry Pi.
 
 ~~~
 ssh pi@<#IP_ADDRESS#>
 ~~~
 
-The default password is `raspberry`, change this to whatever you want by entering the following command.
+Run the following command to be prompted for a new password.
 
 ~~~
 passwd pi
 ~~~
 
-### Hostname
+<!-- ### Hostname
+
 You can also change the hostname of the Raspberry Pi. This is the name you will see on your router in the list of connected devices through DHCP. To do this, enter the following command.
 
 ~~~
 sudo hostname <#NEW_HOSTNAME#>
 ~~~
 
-You'll have to reboot after this, otherwise sudo won't work anymore.
+You'll have to reboot after this, otherwise sudo won't work anymore. -->
 
 ### All done
-Your Raspberry Pi is now ready to be used, you should be able to access it through SSH over WiFi.
+
+Well look at that, you're all done. Your Raspberry Pi is now ready to be used.
