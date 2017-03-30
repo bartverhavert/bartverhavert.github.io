@@ -8,7 +8,7 @@ created_at: 2017-03-30
 
 <!-- preview_start -->
 
-This guide will walk you through the steps you have to take to get Raspbian Jessie
+This is a Mac guide that will walk you through the steps you have to take to get Raspbian Jessie
 Lite up and running on your Raspberry Pi. It is mainly written for the Raspberry
 Pi Zero W, which doesn't have an ethernet port and because I didn't have a mini-HDMI
 cable, but it should work for the other ones as well.
@@ -19,9 +19,11 @@ cable, but it should work for the other ones as well.
 
 * Download the latest version of [Raspbian](https://www.raspberrypi.org/downloads/raspbian/ "Raspbian")
 
-* Format the SD card to FAT32
+* Get yourself an SD card that fits in your Raspberry Pi, for the Zero W this is
+a Micro SD card. I use an 8 GB one, which is more than enough for what I'm doing
+with it. Format the SD card to **FAT32**.
 
-* Find the SD card
+* Find the location of the SD card on your computer.
 
 ~~~
 diskutil list
@@ -60,8 +62,8 @@ a connected keyboard, mouse and monitor. After some searching, I found
 [a blog post](https://davidmaitland.me/2015/12/raspberry-pi-zero-headless-setup/)
 which I used to get the job done. For me, the following steps were sufficient.
 
-* Insert SD card in Windows
-* Use an application like 'Paragon ExtFS', something that can write to Ext4 Linux partitions
+* Insert SD card in your computer, I used a Windows machine for this
+* Use an application like 'Paragon ExtFS' for Windows, or just anything that can write to Ext4 Linux partitions
 * Edit the file at `etc/network/interfaces` on the mounted disk. Find the following lines of code
 
 ~~~
