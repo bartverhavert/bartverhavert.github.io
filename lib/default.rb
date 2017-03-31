@@ -42,6 +42,28 @@ module AppHelper
     end
 end
 
+def flatten_all_categories
+    @items.each do |item|
+        item[:categories] = flattened_categories(item[:categories])
+    end
+end
+
+def flattened_categories(categories)
+    if categories.nil?
+        [ ]
+    elsif categories.respond_to?(:each)
+        categories
+    elsif categories.include?(',')
+        categories.split(/\s*,\s*/)
+    else
+        [ categories ]
+    end
+end
+
+def create_categories
+
+end
+
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::Rendering
