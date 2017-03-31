@@ -13,7 +13,16 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+preprocess do
+  tags = @items.map { |i| i[:tags] }.uniq
+  tags.each do |tag|
+    content = '### test'
+    attributes = { tag: tag }
+    identifier = "/tags/#{tag}"
 
+    @items.create(content, attributes, identifier)
+  end
+end
 
 # BLOG POSTS
 
