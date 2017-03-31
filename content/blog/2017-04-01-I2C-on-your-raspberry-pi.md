@@ -1,7 +1,6 @@
 ---
 title: I2C on your Raspberry Pi
-categories: development, raspberry, pi, zero, nodejs
-tags: nanoc
+categories: development, raspberry pi
 kind: article
 created_at: 2017-04-01
 ---

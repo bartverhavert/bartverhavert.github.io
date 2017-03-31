@@ -1,6 +1,6 @@
 ---
 title: Raspberry Pi headless setup
-tags: ['development', 'raspberry pi', 'wireless', 'ssh']
+categories: development, raspberry pi
 kind: article
 created_at: 2017-03-30
 ---
