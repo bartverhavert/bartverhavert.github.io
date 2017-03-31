@@ -77,8 +77,8 @@ def create_categories
     for category in all_categories
         @items.create(
             "",
-            { :category => category },
-            "/blog/category/#{category}/"
+            { :title => "Blog - #{category}", :category => category },
+            "/blog/category/#{category}"
         )
     end
 end
