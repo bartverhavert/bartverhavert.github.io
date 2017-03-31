@@ -60,8 +60,28 @@ def flattened_categories(categories)
     end
 end
 
-def create_categories
+def all_categories
+    categories = []
+    sorted_articles.each do |item|
+        next if item[:categories].nil?
+        if item[:categories].respond_to?(:each)
+            item[:categories].each { |category| categories << category }
+        else
+            categories << item[:categories]
+        end
+    end
+    categories.uniq
+end
 
+def create_categories
+    for category in all_categories
+        puts category
+        # @items.create(
+        #     "<%= render 'category', :category => \"#{category}\" %>",
+        #     { :title => category },
+        #     "/blog/category/#{category}/"
+        # )
+    end
 end
 
 include Nanoc::Helpers::Blogging
