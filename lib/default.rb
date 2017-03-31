@@ -91,6 +91,16 @@ def number_of_articles_in_category(category)
     articles_in_category(category).count
 end
 
+def blah(item)
+    categories = item[:categories].map do |category|
+        count = number_of_articles_in_category(category)
+        url = "/blog/category/#{category}"
+        "<a href=\"#{url}\">#{category} (#{count})</a>"
+    end
+
+    return categories.join ", "
+end
+
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::Rendering
