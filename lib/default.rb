@@ -83,6 +83,14 @@ def create_categories
     end
 end
 
+def articles_in_category(category)
+    sorted_articles.select{|a| a[:categories].include?(category) rescue false }
+end
+
+def number_of_articles_in_category(category)
+    articles_in_category(category).count
+end
+
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Tagging
 include Nanoc::Helpers::Rendering
