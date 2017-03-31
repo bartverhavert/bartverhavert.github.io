@@ -75,12 +75,11 @@ end
 
 def create_categories
     for category in all_categories
-        puts category
-        # @items.create(
-        #     "<%= render 'category', :category => \"#{category}\" %>",
-        #     { :title => category },
-        #     "/blog/category/#{category}/"
-        # )
+        @items.create(
+            "",
+            { :category => category },
+            "/category/#{category}/"
+        )
     end
 end
 
