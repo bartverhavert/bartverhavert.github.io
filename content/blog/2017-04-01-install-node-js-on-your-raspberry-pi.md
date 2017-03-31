@@ -1,7 +1,6 @@
 ---
 title: Install Node.js on your Raspberry Pi
-categories: development, raspberry, pi, zero, nodejs
-tags: nanoc
+tags: [development, raspberry pi, nodejs]
 kind: article
 created_at: 2017-04-01
 ---

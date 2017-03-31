@@ -1,7 +1,6 @@
 ---
 title: Raspberry Pi headless setup
-categories: development, raspberry, pi, zero, wireless, ssh
-tags: nanoc
+tags: [development, raspberry pi, wireless, ssh]
 kind: article
 created_at: 2017-03-30
 ---
