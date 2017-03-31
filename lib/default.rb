@@ -78,7 +78,7 @@ def create_categories
         @items.create(
             "",
             { :category => category },
-            "/category/#{category}/"
+            "/blog/category/#{category}/"
         )
     end
 end
