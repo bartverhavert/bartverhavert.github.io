@@ -30,5 +30,17 @@ After this, run `node -v` and `npm -v` to verify Node.js and NPM are installed. 
 ### Keep alive
 
 ~~~
-npm install pm2 -g
+sudo npm install pm2 -g
+~~~
+
+~~~
+sudo pm2 startup
+~~~
+
+~~~
+sudo pm2 start some-app.js --name "some-name" --watch
+~~~
+
+~~~
+sudo pm2 save
 ~~~
