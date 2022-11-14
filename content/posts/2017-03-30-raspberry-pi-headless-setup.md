@@ -1,8 +1,7 @@
 ---
 title: Raspberry Pi headless setup
-categories: development, raspberry pi
-kind: article
-created_at: 2017-03-30
+date: 2017-03-30
+draft: true
 ---
 
 <!-- preview_start -->
