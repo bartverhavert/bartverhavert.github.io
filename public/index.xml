@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bart Verhavert</title>
+    <link>http://bartverhavert.be/</link>
+    <description>Recent content on Bart Verhavert</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://bartverhavert.be/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
