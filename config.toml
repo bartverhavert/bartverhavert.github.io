@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'Bart Verhavert'
 theme = 'hugo-coder'
 
+contentDir = 'content'
+
 [params]
   author = "Bart Verhavert"
   info = "freelance iOS developer"
